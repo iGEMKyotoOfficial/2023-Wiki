@@ -1,5 +1,5 @@
 import Container from 'components/container'
-import styles from 'src/styles/footer.module.css'
+import styles from 'styles/footer.module.css'
 import Social from 'components/social'
 import Link from 'next/link'
 
@@ -11,6 +11,8 @@ export default function Footer() {
                     <Link href="/" legacyBehavior>
                         <a className="home">iGEM Kyoto</a>
                     </Link>
+                    <br />
+                    Follow me
                     <Social />
                     © 2023 iGEM Kyoto
                 </div>
