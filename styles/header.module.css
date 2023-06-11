@@ -1,12 +1,3 @@
-.header {
-    width: 100%;
-    min-height: 93.6vh;
-    padding: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:relative;
-    -webkit-box-shadow: inset 0px -42px 53px -25px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px -42px 53px -25px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px -42px 53px -25px rgba(0, 0, 0, 0.75);
+.flexContain {
+    composes: spaceBetween from 'styles/utils.module.css';
 }

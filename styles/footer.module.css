@@ -4,8 +4,7 @@
     line-height: 200%;
 }
 .flexContain {
-    composes: sideBySideCenter from 'styles/utils.module.css';
-    gap: 2em;
+    composes: spaceBetween from 'styles/utils.module.css';
 }
 .wrapper a, .flexContain a{
     text-decoration: none;
