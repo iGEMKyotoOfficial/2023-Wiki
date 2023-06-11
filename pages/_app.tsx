@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import Layout from 'components/layout'
 import { MDXProvider } from '@mdx-js/react'
 import { ReactNode } from 'react'
 
@@ -15,7 +16,9 @@ export default function MyApp({ Component, pageProps }:
   { Component: any, pageProps: any }) {
   return (
     <MDXProvider components={components}>
+      <Layout>
         <Component{...pageProps} />
+      </Layout>
     </MDXProvider>
   )
 }
