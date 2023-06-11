@@ -1,0 +1,18 @@
+.wrapper{
+    padding: var(--space-xl) 0;
+    background-color: var(--gray-10);
+    line-height: 200%;
+}
+.flexContain {
+    composes: sideBySideCenter from 'src/styles/utils.module.css';
+    gap: 2em;
+}
+.wrapper a, .flexContain a{
+    text-decoration: none;
+    color: black;
+}
+
+.wrapper a:hover, .flexContain a:hover{
+    text-decoration: none;
+    color: #f08080;
+}
