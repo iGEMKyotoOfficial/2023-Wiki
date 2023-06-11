@@ -1,32 +1,124 @@
-/* 両端揃え　 */
-.spaceBetween {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* 横並び（基本形）　*/
-.sideBySide {
-    display: flex;
-    flex-direction: column;
-}
-
-@media (min-width: 768px) {
-    .sideBySide {
-        flex-direction: row;
-        justify-content: space-between;
+/* デスクトップ */
+@media (min-width: 768px){
+    .btn{
+     display: none;
     }
-}
-
-/* 横並び（中央揃え） */
-.sideByCenter {
-    composes: sideBySide;
-    align-items: center;
-    text-align: center;
-}
-
-@media (min-width: 768px) {
-    .sideByCenter {
-        text-align: left;
+ 
+   .list {
+     font-size: var(--heading3);
+     font-weight: 500;
+     display: inline-block;
+     letter-spacing: 0.1em;
+     padding: 1em 2em;
+     background-color: var(--gray-75);
+     color: var(--white);
+     display: flex;
+     gap: 3em;
+     border-radius: 10px;
+     }
+ }
+ 
+ /* モバイル　*/
+ @media (max-width: 767px){
+    /* ボタン */
+    .btn {
+     all: unset;
+     outline: revert;
+     -webkit-tap-highlight-color: transparent;
+     cursor: pointer;
+     width: 42px;
+     height: 42px;
+     position:relative;
+     z-index: 200;
     }
-}
+ 
+    .close .btn{
+     color:var(--gray-75);
+    }
+    .open .btn{
+     color:#f08080;
+    }
+ 
+    /* ボタン内のバー */
+    .btn {
+     display: grid;
+     place-items: center;
+    }
+ 
+    .btn::before,
+    .btn::after,
+    .btn .bar {
+     grid-area: 1 / 1;
+     content: "";
+     display: block;
+     width: 32px;
+     height: 1px;
+     background-color: currentColor;
+     transition: transform 0.4s;
+    }
+ 
+    .close .btn::before {
+     transform: translateY(-8px);
+    }
+ 
+    .close .btn::after {
+     transform: translateY(8px);
+    }
+ 
+    .open .btn::before {
+     transform: rotate(45deg);
+    }
+ 
+    .open .btn::after {
+     transform: rotate(-45deg);
+    }
+ 
+    .open .btn .bar {
+     transform: scale(0);
+    }
+ 
+    /*　メニュー（オーバーレイ）　*/
+    .list {
+     position: fixed;
+     inset: 0 -100% 0 100%;
+     z-index: 100;
+     background: rgba(0, 0, 0, 0.8);
+     color: var(--white);
+     transition: transform 0.4s;
+    }
+ 
+    .open .list {
+     transform: translateX(-100%);
+    }
+    /*　メニュー（オーバーレイ内の配置）　*/
+    .list {
+     display: grid;
+     gap: 40px;
+     place-content: center;
+     text-align: center;
+    }
+ }
+ 
+ /* ホバー　　*/
+ @media (hover: hover) {
+     .list a:not(:hover) {
+         color: white;
+         text-decoration: none;
+     }
+     .list a:hover {
+         color: #f08080;
+         text-decoration: none;
+     }
+ }
+ 
+ @media (hover: none) {
+     .list a {
+         -webkit-tap-highlight-color: transparent;
+         color: #ffffff;
+         text-decoration: none;
+     }
+ 
+     .list a:active {
+         color: #f08080;
+     }
+ }

@@ -2,6 +2,7 @@ import {useState} from 'react'
 import Link from 'next/link'
 import styles from 'styles/nav.module.css'
 
+
 export default function Nav(){
     const [navIsOpen, setNavIsOpen] = useState(false)
 
@@ -11,6 +12,7 @@ export default function Nav(){
 
     const closeNav = () => {
         setNavIsOpen(false)
+        console.log("hi")
     }
 
     return(
@@ -33,11 +35,11 @@ export default function Nav(){
             </button>
             <ul className={styles.list}>
                 <li>
-                    <Link href="/" legacyBehavior>
+                    <Link href="/" legacyBehavior passHref>
                             <a onClick={closeNav} className="home">Home</a>
                     </Link>
                 </li>
             </ul>
         </nav>
     )
-} 
+}
