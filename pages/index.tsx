@@ -1,8 +1,10 @@
+import Link from 'next/link'
 import Container from 'components/container'
-export default function Index() {
-  return (
+
+export default function Description() {
+  return <>
     <Container>
-      hogehoge
+      <Link href={"https://google.co.jp/"}>hoge</Link>
     </Container>
-  )
+  </>
 }
