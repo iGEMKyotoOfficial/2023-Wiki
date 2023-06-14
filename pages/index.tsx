@@ -1,10 +1,18 @@
 import Link from 'next/link'
 import Container from 'components/container'
 
-export default function Description() {
+export default function Home() {
   return <>
     <Container>
-      <Link href={"https://google.co.jp/"}>hoge</Link>
+      <h1>Welcome to iGEM Kyoto's Wiki</h1>
+      <h2>Project Description</h2>
+      <p style={{ margin: "2em auto" }}>
+        <Link href="/description" className="btn btn-flat">
+          <span>
+            Click here
+          </span>
+        </Link>
+      </p>
     </Container>
   </>
 }
