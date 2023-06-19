@@ -1,0 +1,16 @@
+image: node:16
+
+pages:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - npm run export
+    - mv public _public
+    - mv out public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+
